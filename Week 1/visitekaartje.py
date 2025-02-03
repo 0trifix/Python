@@ -1,0 +1,5 @@
+print("___________________________")
+print("|    Naam: El Hachimi     |")
+print("|    Voornaam:  Daoud     |")
+print("|    Leeftijd:     20     |")
+print("|_________________________|")
