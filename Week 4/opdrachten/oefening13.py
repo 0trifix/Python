@@ -19,4 +19,15 @@ def is_zin_anagram(zin1, zin2):
                 letters[letter] -= 1
             else:
                 return False
+    for letter in letters:
+        if letters[letter] != 0:
+            return False
+    return True
 
+def main():
+    zin1 = "Ik ben een testzin."
+    zin2 = "Ik ben een zin test."
+    print(is_zin_anagram(zin1, zin2))
+
+if __name__ == '__main__':
+    main()
