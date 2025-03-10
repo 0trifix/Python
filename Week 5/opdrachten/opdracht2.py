@@ -1,7 +1,7 @@
 def main():
-    from opdracht1 import vraagBestandsNaam
-    AantalRegels = 10
-    bestandsNaam = vraagBestandsNaam()
+    import sys
+    AantalRegels = int(sys.argv[2])
+    bestandsNaam = sys.argv[1] 
     regels = []
     try:
         bestand = open(bestandsNaam, "r")

@@ -1,11 +1,8 @@
-def vraagBestandsNaam():
-    bestandsNaam = input("Geef de bestandsnaam: ")
-    return bestandsNaam
-
 def main():
+    import sys
     aantalRegels = 0
-    maxAantalRegels = 10
-    bestandsNaam = vraagBestandsNaam()
+    maxAantalRegels = int(sys.argv[2])
+    bestandsNaam = sys.argv[1]
     try:
         bestand = open(bestandsNaam, "r")
         for regel in bestand:

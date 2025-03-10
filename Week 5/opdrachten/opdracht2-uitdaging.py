@@ -1,8 +1,7 @@
 def main():
-    from opdracht1 import vraagBestandsNaam
-    AantalRegels = 10
-    bestandsNaam = vraagBestandsNaam()
-    regels = []
+    import sys
+    AantalRegels = int(sys.argv[2])
+    bestandsNaam = sys.argv[1] 
     try:
         bestand = open(bestandsNaam, "r")
         for regel in (bestand.readlines()[-AantalRegels:]):
