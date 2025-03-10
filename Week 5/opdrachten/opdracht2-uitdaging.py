@@ -5,15 +5,8 @@ def main():
     regels = []
     try:
         bestand = open(bestandsNaam, "r")
-        for regel in bestand:
-            regels.append(regel) 
-        
-        for i in range(AantalRegels):
-            print(regels[-AantalRegels + i], end="")
-
-        # for i in range(len(regels)):
-        #     if not i < len(regels) - AantalRegels:
-        #         print(regels[i], end="")
+        for regel in (bestand.readlines()[-AantalRegels:]):
+            print(regel, end="")
 
     except FileNotFoundError:
         print(f"Het bestand '{bestandsNaam}' is niet gevonden.")
