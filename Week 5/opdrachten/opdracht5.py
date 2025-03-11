@@ -1,7 +1,8 @@
-from opdracht4 import vraag_bestand, lees_bestand
+from opdracht4 import lees_bestand
+import sys
 
 def main():
-    bestand = vraag_bestand()
+    bestand = sys.argv[1]
     lines = lees_bestand(bestand)
     langste_woord = ""
     for i in lines:
