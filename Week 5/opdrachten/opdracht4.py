@@ -1,3 +1,4 @@
+# Deze code is niet volledig zoals er gevraagd werd in de opgave
 def vraag_bestand():
     bestand = input("Welk bestand wilt u openen? ")
     return bestand
