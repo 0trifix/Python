@@ -4,10 +4,14 @@ def vraag_getallen():
         getal = input("Voer een getal in: ")
         if getal == "":
             break
-        if not getal.isnumeric():
+        elif not getal.isnumeric():
             print("Dit is geen getal.")
             continue
-        getallen.append(int(getal))
+        else:
+            if "." in getal:
+                getallen.append(float(getal))
+            else:
+                getallen.append(int(getal))
     return getallen
 
 def main():
