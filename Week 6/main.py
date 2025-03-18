@@ -33,6 +33,7 @@ def check(serversFile):
             print(f"{server['name']}-{server['ip']}: UP")
         else:
             print(f"{server['name']}-{server['ip']}: DOWN")
+    html(serversFile)
 
 def ping(ip, name):
     response = os.system(f"ping -c 1 {ip} > logs/{name}{datetime.datetime.now().strftime('_%H_%M_%d_%m_%Y.log')}")
@@ -48,7 +49,20 @@ def init():
         pass
 
 
-def html():
+def html(serversFile):
+    with open(serversFile, "r") as file:
+        servers = json.load(file)
+    with open("index.html", "w") as file:
+        file.write("<html><head><title>Server Status</title></head><body>")
+        file.write("<h1>Server Status</h1>")
+        file.write("<p>Generated at: " + datetime.datetime.now().strftime("%H:%M %d/%m/%Y") + "</p>")
+        file.write("<table><tr><th>Name</th><th>IP</th><th>Status</th></tr>")
+        for server in servers:
+            if ping(server["ip"], server["name"]):
+                file.write(f"<tr><td>{server['name']}</td><td>{server['ip']}</td><td>UP</td></tr>")
+            else:
+                file.write(f"<tr><td>{server['name']}</td><td>{server['ip']}</td><td>DOWN</td></tr>")
+        file.write("</body></html>")
     
 
 def main():
@@ -66,7 +80,6 @@ def main():
         print("Invalid option")
         print("Usage: python main.py [terminal|check]")
         return
-
 
 if __name__ == "__main__":
     main()
