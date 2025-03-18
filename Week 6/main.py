@@ -1,5 +1,6 @@
 import sys
 import json
+import os
 from management import add, remove, list, help
 
 def terminal():
@@ -24,18 +25,42 @@ def terminal():
         elif command == "help":
             help()
         else:
-            print("Invalid command")
+            print("Invalid command, type 'help")
         command = input("> ")
 
 def check():
+    serversFile = "servers.json"
+    with open(serversFile, "r") as file:
+        servers = json.load(file)
+    for server in servers:
+        if ping(server["ip"]):
+            print(f"{server['name']}-{server['ip']}: UP")
+        else:
+            print(f"{server['name']}-{server['ip']}: DOWN")
+
+def ping(ip):
+    response = os.system("ping -c 1 " + ip)
+    if response == 0:
+        return True
+    else:
+        return False
 
 def html():
     pass
 
 def main():
-    if sys.argv[1] == "terminal":
+    if len(sys.argv) < 2:
+        print("Usage: python main.py [terminal|check]")
+        return
+    elif sys.argv[1] == "terminal":
         terminal()
     elif sys.argv[1] == "check":
+        check()
+    else:
+        print("Invalid option")
+        print("Usage: python main.py [terminal|check]")
+        return
+
 
 if __name__ == "__main__":
     main()
