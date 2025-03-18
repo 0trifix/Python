@@ -27,11 +27,15 @@ def terminal():
             print("Invalid command")
         command = input("> ")
 
+def check():
+
 def html():
     pass
 
 def main():
-    terminal()
+    if sys.argv[1] == "terminal":
+        terminal()
+    elif sys.argv[1] == "check":
 
 if __name__ == "__main__":
     main()
