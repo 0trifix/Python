@@ -1,11 +1,8 @@
-import sys
-import json
-import os
+import sys, os, json, datetime
 from management import add, remove, list, help
 
-def terminal():
+def terminal(serversFile):
     command = input("> ")
-    serversFile = "servers.json"
     try:
         with open(serversFile, "r") as file:
             if file.read() == "":
@@ -28,34 +25,43 @@ def terminal():
             print("Invalid command, type 'help")
         command = input("> ")
 
-def check():
-    serversFile = "servers.json"
+def check(serversFile):
     with open(serversFile, "r") as file:
         servers = json.load(file)
     for server in servers:
-        if ping(server["ip"]):
+        if ping(server["ip"], server["name"]):
             print(f"{server['name']}-{server['ip']}: UP")
         else:
             print(f"{server['name']}-{server['ip']}: DOWN")
 
-def ping(ip):
-    response = os.system("ping -c 1 " + ip)
+def ping(ip, name):
+    response = os.system(f"ping -c 1 {ip} > logs/{name}{datetime.datetime.now().strftime('_%H_%M_%d_%m_%Y.log')}")
     if response == 0:
         return True
     else:
         return False
 
+def init():
+    try:
+        os.mkdir("logs")
+    except FileExistsError:
+        pass
+
+
 def html():
-    pass
+    
 
 def main():
+    serversFile = "servers.json"
     if len(sys.argv) < 2:
         print("Usage: python main.py [terminal|check]")
         return
     elif sys.argv[1] == "terminal":
-        terminal()
+        init()
+        terminal(serversFile)
     elif sys.argv[1] == "check":
-        check()
+        init()
+        check(serversFile)
     else:
         print("Invalid option")
         print("Usage: python main.py [terminal|check]")
