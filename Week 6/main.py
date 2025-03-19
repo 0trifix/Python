@@ -38,6 +38,7 @@ def check(serversFile):
         server_statuses.append({"name": server["name"], "ip": server["ip"], "status": status})
         print(f"{server['name']}-{server['ip']}: {status}")
     # generate_html(server_statuses)
+    return server_statuses
 
 def ping(ip, name):
     response = os.system(f"ping -c 1 {ip} > logs/{name}{datetime.datetime.now().strftime('_%H_%M_%d_%m_%Y.log')}")
@@ -60,7 +61,15 @@ def gui(serversFile):
     app.geometry("800x600")
     app.title("Server Monitor")
     
-    button = customtkinter.CTkButton(app, text="Ping Servers", command=lambda: check(serversFile))
+    status_label = customtkinter.CTkLabel(app, text="Server status zal hier worden weergegeven")
+    status_label.pack(pady=20)
+
+    def update_status():
+        server_statuses = check(serversFile)
+        status_text = "\n".join([f"{server['name']} - {server['ip']}: {server['status']}" for server in server_statuses])
+        status_label.configure(text=status_text if status_text else "Geen servers gevonden")
+
+    button = customtkinter.CTkButton(app, text="Ping Servers", command=update_status)
     button.pack(padx=20, pady=20)
 
     app.mainloop()
