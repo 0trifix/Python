@@ -61,13 +61,13 @@ def gui(serversFile):
     app.geometry("800x600")
     app.title("Server Monitor")
     
-    status_label = customtkinter.CTkLabel(app, text="Server status zal hier worden weergegeven")
+    status_label = customtkinter.CTkLabel(app, text="Server status will be shown here")
     status_label.pack(pady=20)
 
     def update_status():
         server_statuses = check(serversFile)
         status_text = "\n".join([f"{server['name']} - {server['ip']}: {server['status']}" for server in server_statuses])
-        status_label.configure(text=status_text if status_text else "Geen servers gevonden")
+        status_label.configure(text=status_text if status_text else "No servers listed")
 
     button = customtkinter.CTkButton(app, text="Ping Servers", command=update_status)
     button.pack(padx=20, pady=20)
