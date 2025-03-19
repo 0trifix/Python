@@ -1,4 +1,4 @@
-import sys, os, json, datetime
+import sys, os, json, datetime, customtkinter
 from management import add, remove, list, help
 
 def terminal(serversFile):
@@ -26,14 +26,18 @@ def terminal(serversFile):
         command = input("> ")
 
 def check(serversFile):
-    with open(serversFile, "r") as file:
-        servers = json.load(file)
+    try:
+        with open(serversFile, "r") as file:
+            servers = json.load(file)
+    except FileNotFoundError:
+        print("No servers listed!")
+        return
     server_statuses = []
     for server in servers:
         status = "UP" if ping(server["ip"], server["name"]) else "DOWN"
         server_statuses.append({"name": server["name"], "ip": server["ip"], "status": status})
         print(f"{server['name']}-{server['ip']}: {status}")
-    generate_html(server_statuses)
+    # generate_html(server_statuses)
 
 def ping(ip, name):
     response = os.system(f"ping -c 1 {ip} > logs/{name}{datetime.datetime.now().strftime('_%H_%M_%d_%m_%Y.log')}")
@@ -48,40 +52,53 @@ def init():
     except FileExistsError:
         pass
 
-def generate_html(server_statuses):
-    html_content = """
-    <html>
-        <head>
-            <title>Server Status</title>
-        </head>
-        <body>
-            <h1>Server Status</h1>
-            <p>Generated at: {generated_at}</p>
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>IP</th>
-                    <th>Status</th>
-                </tr>
-                {rows}
-            </table>
-        </body>
-    </html>
-    """
-    rows = ""
-    for server in server_statuses:
-        row = f"<tr><td>{server['name']}</td><td>{server['ip']}</td><td>{server['status']}</td></tr>"
-        rows += row
+def gui(serversFile):
+    customtkinter.set_appearance_mode("dark")
+    customtkinter.set_default_color_theme("blue")
 
-    html_content = html_content.format(generated_at=datetime.datetime.now().strftime("%H:%M %d/%m/%Y"), rows=rows)
+    app = customtkinter.CTk()
+    app.geometry("800x600")
+    app.title("Server Monitor")
     
-    with open("index.html", "w") as file:
-        file.write(html_content)
+    button = customtkinter.CTkButton(app, text="Ping Servers", command=lambda: check(serversFile))
+    button.pack(padx=20, pady=20)
+
+    app.mainloop()
+
+# def generate_html(server_statuses):
+#     html_content = """
+#     <html>
+#         <head>
+#             <title>Server Status</title>
+#         </head>
+#         <body>
+#             <h1>Server Status</h1>
+#             <p>Generated at: {generated_at}</p>
+#             <table>
+#                 <tr>
+#                     <th>Name</th>
+#                     <th>IP</th>
+#                     <th>Status</th>
+#                 </tr>
+#                 {rows}
+#             </table>
+#         </body>
+#     </html>
+#     """
+#     rows = ""
+#     for server in server_statuses:
+#         row = f"<tr><td>{server['name']}</td><td>{server['ip']}</td><td>{server['status']}</td></tr>"
+#         rows += row
+#
+#     html_content = html_content.format(generated_at=datetime.datetime.now().strftime("%H:%M %d/%m/%Y"), rows=rows)
+#
+#     with open("index.html", "w") as file:
+#         file.write(html_content)
 
 def main():
     serversFile = "servers.json"
     if len(sys.argv) < 2:
-        print("Usage: python main.py [terminal|check]")
+        print("Usage: python main.py [terminal|check|gui]")
         return
     elif sys.argv[1] == "terminal":
         init()
@@ -89,6 +106,8 @@ def main():
     elif sys.argv[1] == "check":
         init()
         check(serversFile)
+    elif sys.argv[1] == "gui":
+        gui(serversFile)
     else:
         print("Invalid option")
         print("Usage: python main.py [terminal|check]")
