@@ -11,7 +11,10 @@ def get_yaml(file):
         return post.metadata    
 
 def remove_yaml_from_content(content):
-    return content.split("---")[2]
+    try:
+        return content.split("---")[2]
+    except IndexError:
+        return content
 
 def get_content(file):
     with open(file, 'r') as f:
@@ -44,8 +47,11 @@ def main():
     for page in get_md_files(folder):
         content = get_content(page)
         html = markdown.markdown(content)
-        with open(f"output/{get_yaml(page)['url']}", 'w') as f:
-            f.write(render_template(template, pages, html))
+        try:
+            os.mkdir("_site")
+        except FileExistsError:
+            with open(f"_site/{get_yaml(page)['url']}", 'w') as f:
+                f.write(render_template(template, pages, html))
 
 if __name__ == "__main__":
     main()
