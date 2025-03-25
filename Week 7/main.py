@@ -1,4 +1,4 @@
-import markdown, frontmatter, os, sys, jinja2
+import markdown, frontmatter, os, jinja2
 
 def get_md_files(location):
     path = os.getcwd() + f"/{location}"
@@ -7,19 +7,13 @@ def get_md_files(location):
 
 def get_yaml(file):
     with open(file, 'r') as f:
-        post = frontmatter.load(f)
-        return post.metadata    
-
-def remove_yaml_from_content(content):
-    try:
-        return content.split("---")[2]
-    except IndexError:
-        return content
+        file = frontmatter.load(f)
+        return file.metadata    
 
 def get_content(file):
     with open(file, 'r') as f:
         post = frontmatter.load(f)
-        return remove_yaml_from_content(post.content)
+        return post.content
 
 def get_metadata(folder):
     pages = []
