@@ -50,8 +50,9 @@ def main():
         try:
             os.mkdir("_site")
         except FileExistsError:
-            with open(f"_site/{get_yaml(page)['url']}", 'w') as f:
-                f.write(render_template(template, pages, html))
+            pass
+        with open(f"_site/{get_yaml(page)['url']}", 'w') as f:
+            f.write(render_template(template, pages, html))
 
 if __name__ == "__main__":
     main()
