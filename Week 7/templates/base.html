@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Website Titel{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <nav>
-      <ul>
-        {{for page in pages}}
-          <li><a href="{{ page['url'] }}">{{ page['title'] }}</a></li>
-        {{end}}
-      </ul>
+        <ul>
+            {% for page in pages %}
+                <li><a href="{{ page['url'] }}">{{ page['title'] }}</a></li>
+            {% endfor %}
+        </ul>
     </nav>
     <div class="content">
-      {{ content }}
+        {{ content }}
     </div>
 </body>
 </html>
