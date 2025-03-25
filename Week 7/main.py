@@ -1,3 +1,4 @@
+from frontmatter.default_handlers import yaml
 import markdown, frontmatter, os, sys, jinja2
 
 def get_md_files():
@@ -10,9 +11,10 @@ def get_yaml(file):
         post = frontmatter.load(f)
         return post.metadata    
 
-def get_file_content(file):
-    with open(file, 'r') as f:
-        return f.read()
-
 def remove_yaml_from_content(content):
     return content.split("---")[2]
+
+def get_content(file):
+    with open(file, 'r') as f:
+        post = frontmatter.load(f)
+        return remove_yaml_from_content(post.content)
