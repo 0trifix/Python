@@ -36,6 +36,10 @@ def render_template(template, pages, content):
 
 def main():
     folder = "pages"
+    try:
+        os.mkdir("pages")
+    except FileExistsError:
+        pass
     pages = list_pages(folder)
     template = get_template()
     for page in get_md_files(folder):
