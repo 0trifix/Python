@@ -4,11 +4,19 @@ class Drank:
         self.temperatuur = temperatuur
     def __str__(self) -> str:
         return f"Naam: {self.naam} \nIdeale temperatuur:{self.temperatuur}°C"
+    def log(self) -> None:
+        log = LogFile("drank.log")
+        log.schrijf(f"Naam: {self.naam} \nIdeale temperatuur:{self.temperatuur}°C")
+        log.sluit()
 
 class LogFile:
     def __init__(self, naam: str) -> None:
         self.bestandsnaam = naam
-        self.bestand = open(naam, "w")
+        self.bestand = open(naam, "a")
+    def schrijf(self, tekst: str) -> None:
+        self.bestand.write(tekst + "\n")
+    def sluit(self) -> None:
+        self.bestand.close()
 
 def main():
     cola = Drank("Cola", 5)
@@ -20,6 +28,11 @@ def main():
     print(koffie)
     print(thee)
     print(water)
+
+    cola.log()
+    koffie.log()
+    thee.log()
+    water.log()
 
 if __name__ == "__main__":
     main()
