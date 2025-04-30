@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <style>
+        /* Algemene stijlen */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Navigatiebalk */
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Content */
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            
+                <li><a href="index.html">Home</a></li>
+            
+                <li><a href="about.html">About</a></li>
+            
+                <li><a href="blog.html">Blog</a></li>
+            
+                <li><a href="contact.html">Contact</a></li>
+            
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>Contact</h1>
+<p>Heb je vragen of wil je gewoon hallo zeggen? Neem gerust contact met me op via het onderstaande formulier of stuur een e-mail naar <a href="mailto:jouw-email@example.com">jouw-email@example.com</a>.</p>
+<h2>Contactformulier</h2>
+<form action="https://formspree.io/f/{your_form_id}" method="POST">
+    <label>
+        Je naam:
+        <input type="text" name="name">
+    </label>
+    <label>
+        Je e-mail:
+        <input type="email" name="_replyto">
+    </label>
+    <label>
+        Je bericht:
+        <textarea name="message"></textarea>
+    </label>
+    <button type="submit">Versturen</button>
+</form>
+    </div>
+    <footer>
+        &copy; 2025 Mijn Blog
+    </footer>
+</body>
+</html>
