@@ -4,13 +4,9 @@ from classes import *
 huis = Woning("Mijn Huis")
 
 # Kamers aanmaken
-huis.voeg_kamer_toe(Kamer("Keuken"))
-huis.voeg_kamer_toe(Kamer("Woonkamer"))
-huis.voeg_kamer_toe(Kamer("Slaapkamer"))
-huis.voeg_kamer_toe(Kamer("Badkamer"))
-huis.voeg_kamer_toe(Kamer("Gang"))
-huis.voeg_kamer_toe(Kamer("Bureau"))
-
+kamers = [Kamer("Keuken"), Kamer("Woonkamer"), Kamer("Slaapkamer"), Kamer("Badkamer"), Kamer("Gang"), Kamer("Bureau")]
+for kamer in kamers:
+    huis.voeg_kamer_toe(kamer)
 # Standaard apparaten voor elk kamer
 standaard_apparaten = [Lamp("Lamp", "Philips"), Deurslot("Deurslot", "Yale"), Bewegingssensor("Bewegingssensor", "Nest"), Rookmelder("Rookmelder", "Nest"), Gordijn("Gordijn", "IKEA")]
 
