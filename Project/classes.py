@@ -12,6 +12,8 @@ class Lamp(apparaat):
         super().__init__(naam, merk)
         self.helderheid = 0
         self.type = "lamp"
+    def __str__(self) -> str:
+        return f"{super().__str__()} - Helderheid: {self.helderheid}"
     
 class Thermostaat(apparaat):
     def __init__(self, naam, merk, temperatuur) -> None:
