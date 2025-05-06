@@ -7,13 +7,20 @@ huis = Woning("Mijn Huis")
 kamers = [Kamer("Keuken"), Kamer("Woonkamer"), Kamer("Slaapkamer"), Kamer("Badkamer"), Kamer("Gang"), Kamer("Bureau")]
 for kamer in kamers:
     huis.voeg_kamer_toe(kamer)
-# Standaard apparaten voor elk kamer
-standaard_apparaten = [Lamp("Lamp", "Philips"), Deurslot("Deurslot", "Yale"), Bewegingssensor("Bewegingssensor", "Nest"), Rookmelder("Rookmelder", "Nest"), Gordijn("Gordijn", "IKEA")]
-
-# Apparaten toevoegen aan de Kamers
+# Apparaten aanmaken en toevoegen aan kamers
 for kamer in huis.kamers:
-    for apparaat in standaard_apparaten:
+    apparaten = [
+        Lamp("Lamp", "Philips"),
+        Thermostaat("Thermostaat", "Nest", 22),
+        Deurslot("Deurslot", "Yale"),
+        Bewegingssensor("Bewegingssensor", "Ring"),
+        Rookmelder("Rookmelder", "Nest"),
+        Gordijn("Gordijn", "IKEA")
+    ]
+    for apparaat in apparaten:
         kamer.voeg_apparaat_toe(apparaat)
+
+huis.kamers[0].apparaten[0].zet_helderheid(50)  # Zet de helderheid van de lamp in de keuken op 50%
 
 # Huis weergeven
 print(huis)
