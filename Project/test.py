@@ -3,6 +3,7 @@ from classes import *
 def test():
     kamer1 = Kamer("Keuken")
     huis = Woning("Mijn Huis")
+    kamer1.voeg_apparaat_toe(Lamp("Keukenlamp", "Philips"))
     huis.voeg_kamer_toe(kamer1)
     print(huis)
 

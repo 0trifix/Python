@@ -4,6 +4,8 @@ class apparaat:
         self.merk = merk
         self.type = type
         self.status = False
+    def __str__(self) -> str:
+        return f"{self.naam} ({self.merk}) - {self.type} - {'Aan' if self.status else 'Uit'}"
 
 class Lamp(apparaat):
     def __init__(self, naam, merk) -> None:
@@ -46,6 +48,9 @@ class Kamer:
         self.apparaten = []
     def voeg_apparaat_toe(self, apparaat):
         self.apparaten.append(apparaat)
+    def __str__(self) -> str:
+        apparaten_str = "\n".join([" + " + str(apparaat) for apparaat in self.apparaten])
+        return f"{self.naam}\n________\nApparaten:\n{apparaten_str}\n________\n"
 
 class Woning:
     def __init__(self, naam) -> None:
@@ -53,6 +58,9 @@ class Woning:
         self.kamers = []
     def voeg_kamer_toe(self, kamer):
         self.kamers.append(kamer)
+    def __str__(self) -> str:
+        kamers_str = "\n".join([str(kamer) for kamer in self.kamers])
+        return f"Woning: {self.naam}\nKamers:\n{kamers_str}"
 
 class Bewoner:
     def __init__(self, naam) -> None:
