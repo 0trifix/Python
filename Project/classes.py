@@ -70,7 +70,7 @@ class Kamer:
         self.bewoners.append(bewoner)
     def __str__(self) -> str:
         apparaten_str = "\n".join([" + " + str(apparaat) for apparaat in self.apparaten])
-        return f"{self.naam}\n________\nApparaten:\n{apparaten_str}\n________\nBewoners:\n" + "\n".join([str(bewoner) for bewoner in self.bewoners]) if self.bewoners else "Geen bewoners"
+        return f"{self.naam}\n________\nApparaten:\n{apparaten_str}\n________\n"
 
 class Woning:
     def __init__(self, naam) -> None:
