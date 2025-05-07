@@ -24,3 +24,20 @@ huis.kamers[0].apparaten[0].zet_helderheid(50)  # Zet de helderheid van de lamp 
 
 # Huis weergeven
 print(huis)
+
+# Bewoners aanmaken
+bewoners = [
+    Bewoner("Alice", 30),
+    Bewoner("Bob", 35),
+    Bewoner("Charlie", 25)
+]
+# Bewoners toevoegen aan Kamers
+for bewoner in bewoners:
+    huis.kamers[0].voeg_bewoner_toe(bewoner)  # Voeg elke bewoner toe aan de Keuken
+    
+print(huis.kamers[0].bewoners)  # Print de bewoners in de keuken
+# Bewoners verplaatsen
+for bewoner in bewoners:
+    huis.kamers[1].verplaats_bewoner(bewoner)  # Verplaats elke bewoner naar de woonkamer
+
+print(huis.kamers[1].bewoners)  # Print de bewoners in de woonkamer

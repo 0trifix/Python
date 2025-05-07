@@ -60,18 +60,17 @@ class Kamer:
         self.bewoners = []
     def voeg_apparaat_toe(self, apparaat):
         self.apparaten.append(apparaat)
-    def voeg_bewoner_toe(self, bewoner):
+    def voeg_bewoner_toe(self, bewoner): #Bewoner toevoegen aan kamers
         self.bewoners.append(bewoner)
         bewoner.kamer = self
-    def verwijder_bewoner(self, bewoner):
-        if bewoner in self.bewoners:
-            self.bewoners.remove(bewoner)
-            bewoner.kamer = None
-        else:
-            raise ValueError("Bewoner is niet in deze kamer.")
+    def verplaats_bewoner(self, bewoner): # Bewoner verplaatsen naar een andere kamer
+        if bewoner.kamer is not None:
+            bewoner.kamer.bewoners.remove(bewoner)
+        bewoner.kamer = self
+        self.bewoners.append(bewoner)
     def __str__(self) -> str:
         apparaten_str = "\n".join([" + " + str(apparaat) for apparaat in self.apparaten])
-        return f"{self.naam}\n________\nApparaten:\n{apparaten_str}\n________\n"
+        return f"{self.naam}\n________\nApparaten:\n{apparaten_str}\n________\nBewoners:\n" + "\n".join([str(bewoner) for bewoner in self.bewoners]) if self.bewoners else "Geen bewoners"
 
 class Woning:
     def __init__(self, naam) -> None:
@@ -87,6 +86,8 @@ class Bewoner:
     def __init__(self, naam) -> None:
         self.naam = naam
         self.kamer = None
+    def __str__(self) -> str:
+        return f"Bewoner: {self.naam} - Kamer: {self.kamer.naam if self.kamer else 'Geen kamer toegewezen'}"
 
 class SmartHub:
     def __init__(self, naam) -> None:
