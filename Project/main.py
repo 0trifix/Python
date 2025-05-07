@@ -27,9 +27,9 @@ print(huis)
 
 # Bewoners aanmaken
 bewoners = [
-    Bewoner("Alice", 30),
-    Bewoner("Bob", 35),
-    Bewoner("Charlie", 25)
+    Bewoner("Alice"),
+    Bewoner("Bob"),
+    Bewoner("Charlie")
 ]
 # Bewoners toevoegen aan Kamers
 for bewoner in bewoners:
