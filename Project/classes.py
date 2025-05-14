@@ -4,6 +4,7 @@ class Apparaat:
         self.merk = merk
         self.type = type
         self.status = False
+        self.kamer = None
     def __str__(self) -> str:
         return f"{self.naam} ({self.merk}) - {self.type} - {'Aan' if self.status else 'Uit'}"
 
@@ -39,6 +40,7 @@ class Deurslot(Apparaat):
 class Bewegingssensor(Apparaat):
     def __init__(self, naam, merk) -> None:
         super().__init__(naam, merk)
+        self.beweging = False
         self.type = "bewegingssensor"
 
 class Rookmelder(Apparaat):
@@ -60,6 +62,7 @@ class Kamer:
         self.bewoners = []
     def voeg_apparaat_toe(self, apparaat):
         self.apparaten.append(apparaat)
+        apparaat.kamer = self
     def voeg_bewoner_toe(self, bewoner): #Bewoner toevoegen aan kamers
         self.bewoners.append(bewoner)
         bewoner.kamer = self
@@ -90,12 +93,10 @@ class Bewoner:
         return f"Bewoner: {self.naam} - Kamer: {self.kamer.naam if self.kamer else 'Geen kamer toegewezen'}"
 
 class SmartHub:
-    def __init__(self, naam) -> None:
+    def __init__(self, naam, huis) -> None:
         self.naam = naam
-        self.apparaten = []
-    def voeg_apparaat_toe(self, apparaat):
-        self.apparaten.append(apparaat)
-
+        self.huis = huis
+    
 class Logger:
     def __init__(self, naam) -> None:
         self.naam = naam
