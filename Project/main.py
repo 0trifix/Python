@@ -19,13 +19,10 @@ for kamer in kamers:
     deurslot = Deurslot(f"Deurslot {kamer.naam}", "Yale")
     rookmelder = Rookmelder(f"Rookmelder {kamer.naam}", "Nest")
     gordijn = Gordijn(f"Gordijn {kamer.naam}", "IKEA")
-    # Bewegingssensor krijgt referentie naar de SmartHub
     sensor = Bewegingssensor(f"Bewegingssensor {kamer.naam}", "Ring")
-    # Ieder apparaat aan de kamer toevoegen
     for apparaat in [lamp, thermostaat, deurslot, rookmelder, gordijn, sensor]:
         kamer.voeg_apparaat_toe(apparaat)
         smarthub.voeg_apparaat_toe(apparaat)
-    # Koppel bewegingssensor aan kamer (handig voor de simulatie)
     kamer.sensor = sensor
     kamer.lamp = lamp
 
@@ -37,8 +34,10 @@ def simuleer_beweging(bewoner, volgorde_kamers):
         # Bewegingssensor 'detecteert' beweging
         print(f"{kamer.sensor.naam} detecteert beweging in {kamer.naam}.")
         smarthub.beweging_gedetecteerd(kamer.sensor)
-        # Toon lampstatus
-        print(f"Lampstatus {kamer.lamp.naam}: {'Aan' if kamer.lamp.status else 'Uit'}\n")
+        # Toon lampstatus van ALLE lampen in deze kamer
+        for apparaat in kamer.apparaten:
+            if isinstance(apparaat, Lamp):
+                print(f"Lampstatus {apparaat.naam}: {'Aan' if apparaat.status else 'Uit'}\n")
 
 # Bewoner aanmaken en startkamer toewijzen
 bewoner = Bewoner("BOK")
