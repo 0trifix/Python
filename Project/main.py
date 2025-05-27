@@ -1,37 +1,53 @@
 from classes import *
 
-# Huis aanmaken
+# SmartHub aanmaken
+smarthub = SmartHub("Centrale Hub")
+
+# Huis en kamers aanmaken
 huis = Woning("Mijn Huis")
-
-# Kamers aanmaken
-kamers = [Kamer("Keuken"), Kamer("Woonkamer"), Kamer("Slaapkamer"), Kamer("Badkamer"), Kamer("Gang"), Kamer("Bureau")]
-for kamer in kamers:
+kamer_namen = ["Keuken", "Woonkamer", "Slaapkamer", "Badkamer", "Gang", "Bureau"]
+kamers = []
+for naam in kamer_namen:
+    kamer = Kamer(naam)
     huis.voeg_kamer_toe(kamer)
-# Apparaten aanmaken en toevoegen aan kamers
-for kamer in huis.kamers:
-    apparaten = [
-        Lamp("Lamp", "Philips"),
-        Thermostaat("Thermostaat", "Nest", 22),
-        Deurslot("Deurslot", "Yale"),
-        Bewegingssensor("Bewegingssensor", "Ring"),
-        Rookmelder("Rookmelder", "Nest"),
-        Gordijn("Gordijn", "IKEA")
-    ]
-    for apparaat in apparaten:
+    kamers.append(kamer)
+
+# Apparaten per kamer aanmaken en koppelen aan SmartHub
+for kamer in kamers:
+    lamp = Lamp(f"Lamp {kamer.naam}", "Philips")
+    thermostaat = Thermostaat(f"Thermostaat {kamer.naam}", "Nest", 21)
+    deurslot = Deurslot(f"Deurslot {kamer.naam}", "Yale")
+    rookmelder = Rookmelder(f"Rookmelder {kamer.naam}", "Nest")
+    gordijn = Gordijn(f"Gordijn {kamer.naam}", "IKEA")
+    # Bewegingssensor krijgt referentie naar de SmartHub
+    sensor = Bewegingssensor(f"Bewegingssensor {kamer.naam}", "Ring")
+    # Ieder apparaat aan de kamer toevoegen
+    for apparaat in [lamp, thermostaat, deurslot, rookmelder, gordijn, sensor]:
         kamer.voeg_apparaat_toe(apparaat)
+        smarthub.voeg_apparaat_toe(apparaat)
+    # Koppel bewegingssensor aan kamer (handig voor de simulatie)
+    kamer.sensor = sensor
+    kamer.lamp = lamp
 
-huis.kamers[0].apparaten[0].zet_helderheid(50)  # Zet de helderheid van de lamp in de keuken op 50%
+# Simulatiefunctie: bewoner loopt door kamers, triggert sensoren
+def simuleer_beweging(bewoner, volgorde_kamers):
+    for kamer in volgorde_kamers:
+        print(f"\n{bewoner.naam} loopt naar {kamer.naam}.")
+        kamer.verplaats_bewoner(bewoner)
+        # Bewegingssensor 'detecteert' beweging
+        print(f"{kamer.sensor.naam} detecteert beweging in {kamer.naam}.")
+        smarthub.beweging_gedetecteerd(kamer.sensor)
+        # Toon lampstatus
+        print(f"Lampstatus {kamer.lamp.naam}: {'Aan' if kamer.lamp.status else 'Uit'}\n")
 
-# Huis weergeven
-# print(huis)
-
-# Bewoners aanmaken
+# Bewoner aanmaken en startkamer toewijzen
 bewoner = Bewoner("BOK")
+kamers[0].voeg_bewoner_toe(bewoner)
 
-# Bewoner toevoegen aan Kamers
-huis.kamers[0].voeg_bewoner_toe(bewoner)
+# Simuleer een rondje door het huis
+volgorde = [kamers[0], kamers[1], kamers[4], kamers[2], kamers[3], kamers[5]]
+simuleer_beweging(bewoner, volgorde)
 
-print(bewoner)
-
-huis.kamers[2].verplaats_bewoner(bewoner)  # Verplaats de bewoner naar de slaapkamer
-print(bewoner)
+# Eindstatus van het huis weergeven
+print("\nEindstatus woning:\n")
+print(huis)
