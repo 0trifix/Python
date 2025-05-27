@@ -117,9 +117,8 @@ class Logger:
     def log(self, bericht):
         self.logs.append(bericht)
 
-class HTML_Generator:
-    def __init__(self, naam) -> None:
-        self.naam = naam
-    def genereer_html(self, inhoud):
-        with open(f"{self.naam}.html", "w") as f:
-
+# class HTML_Generator:
+#     def __init__(self, naam) -> None:
+#         self.naam = naam
+#     def genereer_html(self, inhoud):
+#         with open(f"{self.naam}.html", "w") as f:
