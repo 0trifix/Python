@@ -93,10 +93,24 @@ class Bewoner:
         return f"Bewoner: {self.naam} - Kamer: {self.kamer.naam if self.kamer else 'Geen kamer toegewezen'}"
 
 class SmartHub:
-    def __init__(self, naam, huis) -> None:
+    def __init__(self, naam) -> None:
         self.naam = naam
-        self.huis = huis
-    def
+        self.apparaten = []
+        self.regels = []  # Lijst met regels
+    def voeg_apparaat_toe(self, apparaat):
+        self.apparaten.append(apparaat)
+    def voeg_regel_toe(self, regel):
+        self.regels.append(regel)
+    def beweging_gedetecteerd(self, sensor):
+        # Roep een methode aan die de regels uitvoert
+        self.voer_regels_uit(sensor)
+    def voer_regels_uit(self, sensor):
+        # Hier kun je regels direct binnen de klasse definiëren
+        for apparaat in self.apparaten:
+            if isinstance(apparaat, Lamp):
+                if sensor.type == "bewegingssensor":
+                    apparaat.zet_helderheid(100)
+                    print(f"{apparaat.naam} is aangezet door {sensor.naam}.")
 
 class Logger:
     def __init__(self, naam) -> None:
