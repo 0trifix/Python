@@ -96,7 +96,8 @@ class SmartHub:
     def __init__(self, naam, huis) -> None:
         self.naam = naam
         self.huis = huis
-    
+    def
+
 class Logger:
     def __init__(self, naam) -> None:
         self.naam = naam
