@@ -1,4 +1,5 @@
 from classes import *
+import random, time
 
 smarthub = SmartHub("Centrale Hub")
 
@@ -20,11 +21,15 @@ for kamer in kamers:
     for apparaat in [lamp, thermostaat, deurslot, rookmelder, gordijn, sensor]:
         kamer.voeg_apparaat_toe(apparaat)
         smarthub.voeg_apparaat_toe(apparaat)
-    kamer.sensor = sensor
-    kamer.lamp = lamp
+        if apparaat.type == "deurslot" and kamer.naam == "Gang":
+            deurslot.status = True
+            pincode = str(random.randint(1000, 9999))  # Genereer een willekeurige 4-cijferige pincode
+            deurslot.pin_toevoegen(pincode)
+            print(f"Pincode voor {deurslot.naam} is ingesteld op {pincode}")
+            kamer.deurslot = deurslot
 
 def simuleer_beweging(bewoner, kamers):
-    interval = 3
+    interval = 2
     index = 0
     for tijd in range(24):
         print(f"\n {tijd}:00")
@@ -33,10 +38,17 @@ def simuleer_beweging(bewoner, kamers):
             print(f"{bewoner.naam} is wakker geworden.")
         if tijd >= 6 and tijd <= 21:
             if tijd % interval == 0 and index < len(kamers):
-                print(f"{bewoner.naam} beweegt naar {kamers[index].naam}.")
-                kamers[index].verplaats_bewoner(bewoner)
-                if kamers[index].lamp:
-                    kamers[index].lamp.zet_helderheid(100)
+                if kamers[index].naam == "Gang":
+                    lijst_pincode = [random.randint(1000, 9999), random.randint(1000, 9999), kamers[index].deurslot.pincode]
+                    for pincode in lijst_pincode:
+                        if kamers[index].deurslot.open_deur(pincode):
+                            break
+                else:
+                    print(f"{bewoner.naam} beweegt naar {kamers[index].naam}.")
+                    kamers[index].verplaats_bewoner(bewoner)
+                for apparaat in kamers[index].apparaten:
+                    if apparaat.type == "lamp":
+                        apparaat.zet_helderheid(100)
                 index += 1                                   
         if tijd == 21:
             smarthub.tijd_trigger()
@@ -51,13 +63,16 @@ def simuleer_beweging(bewoner, kamers):
                 for apparaat in kamer.apparaten:
                     if apparaat.type == "lamp":
                         apparaat.zet_helderheid(0)
-
+        if tijd < 6 or tijd > 21:
+            time.sleep(0.5)
+        else:
+            time.sleep(2)
 
 def main():
     bewoner = Bewoner("Jan")
     kamers[2].voeg_bewoner_toe(bewoner)
 
-    volgorde = [kamers[0], kamers[1], kamers[5], kamers[3], kamers[4], kamers[2]]
+    volgorde = [kamers[0], kamers[1], kamers[5], kamers[3], kamers[4], kamers[4], kamers[2]]
     simuleer_beweging(bewoner, volgorde)
 
     print("\nEindstatus woning:\n")

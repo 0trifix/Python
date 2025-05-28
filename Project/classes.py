@@ -37,19 +37,22 @@ class Deurslot(Apparaat):
         self.geopend = False
         self.type = "deurslot"
         self.pincode = None
+        self.status = False
     def pin_toevoegen(self, pincode):
         if isinstance(pincode, str) and len(pincode) == 4 and pincode.isdigit():
             self.pincode = pincode
         else:
             raise ValueError("Pincode moet een 4-cijferige string zijn.")
     def open_deur(self, pincode):
-        if self.pincode is not None and self.pincode == pincode:
+        if self.pincode is not None and pincode == self.pincode:
             self.geopend = True
-            self.status = True
-            print(f"{self.naam} is geopend.")
+            print(f"{self.naam} is geopend met pincode {pincode}.")
+            return True
         else:
-            raise ValueError("Ongeldige pincode.")
-
+            self.geopend = False
+            print(f"{self.naam} kon niet geopend worden met pincode {pincode}.")
+            return False
+        
 class Bewegingssensor(Apparaat):
     def __init__(self, naam, merk) -> None:
         super().__init__(naam, merk)
@@ -75,6 +78,7 @@ class Kamer:
         self.naam = naam
         self.apparaten = []
         self.bewoners = []
+        self.deurslot = None
     def voeg_apparaat_toe(self, apparaat):
         self.apparaten.append(apparaat)
         apparaat.kamer = self
