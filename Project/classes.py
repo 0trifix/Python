@@ -36,6 +36,19 @@ class Deurslot(Apparaat):
         super().__init__(naam, merk)
         self.geopend = False
         self.type = "deurslot"
+        self.pincode = None
+    def pin_toevoegen(self, pincode):
+        if isinstance(pincode, str) and len(pincode) == 4 and pincode.isdigit():
+            self.pincode = pincode
+        else:
+            raise ValueError("Pincode moet een 4-cijferige string zijn.")
+    def open_deur(self, pincode):
+        if self.pincode is not None and self.pincode == pincode:
+            self.geopend = True
+            self.status = True
+            print(f"{self.naam} is geopend.")
+        else:
+            raise ValueError("Ongeldige pincode.")
 
 class Bewegingssensor(Apparaat):
     def __init__(self, naam, merk) -> None:
