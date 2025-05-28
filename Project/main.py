@@ -1,4 +1,4 @@
-from classes import *
+from Classes import *
 import random, time
 
 def main():
@@ -16,7 +16,6 @@ def main():
         huis.voeg_kamer_toe(kamer)
         kamers.append(kamer)
 
-    # Apparaten per kamer aanmaken en koppelen aan SmartHub
     for kamer in kamers:
         lamp = Lamp(f"Lamp {kamer.naam}", "Philips", logger=logger)
         thermostaat = Thermostaat(f"Thermostaat {kamer.naam}", "Nest", 21, logger=logger)
@@ -29,12 +28,11 @@ def main():
             smarthub.voeg_apparaat_toe(apparaat)
             if apparaat.type == "deurslot" and kamer.naam == "Gang":
                 deurslot.status = True
-                pincode = str(random.randint(1000, 9999))  # Willekeurige 4-cijferige pincode
+                pincode = str(random.randint(1000, 9999))
                 deurslot.pin_toevoegen(pincode)
                 kamer.deurslot = deurslot
             kamer.sensor = sensor
 
-    # Bewoners aanmaken
     jan = Bewoner("Jan")
     sophie = Bewoner("Sophie")
     kamers[2].voeg_bewoner_toe(jan)
@@ -87,7 +85,6 @@ def main():
                     apparaat.detecteer_rook()
                     apparaat.reset()
         for kamer in kamers:
-            # Lichten uit als er geen bewoners zijn of bij slaap
             if len(kamer.bewoners) == 0:
                 for apparaat in kamer.apparaten:
                     if apparaat.type == "lamp":
@@ -96,11 +93,13 @@ def main():
                 for apparaat in kamer.apparaten:
                     if apparaat.type == "lamp":
                         apparaat.zet_helderheid(0)
-        # HTML updaten na elke tijdstap
         html_generator.genereer_html(
             str(huis) + "\n\nLOGS:\n" + logger.get_logs()
         )
-        # time.sleep(0.4) # optioneel, pauzeer simulatie
+        if tijd < 6 or tijd > 21:
+            time.sleep(1)
+        else:
+            time.sleep(3)
 
 if __name__ == "__main__":
     main()
