@@ -68,10 +68,10 @@ def simuleer_beweging(bewoner, kamers):
                 for apparaat in kamer.apparaten:
                     if apparaat.type == "lamp":
                         apparaat.zet_helderheid(0)
-        if tijd < 6 or tijd > 21:
-            time.sleep(0.5)
-        else:
-            time.sleep(2)
+        # if tijd < 6 or tijd > 21:
+        #     time.sleep(0.5)
+        # else:
+        #     time.sleep(2)
 
 def main():
     bewoner = Bewoner("Jan")
@@ -80,8 +80,8 @@ def main():
     volgorde = [kamers[0], kamers[1], kamers[5], kamers[3], kamers[4], kamers[4], kamers[2]]
     simuleer_beweging(bewoner, volgorde)
 
-    print("\nEindstatus woning:\n")
-    print(huis)
+    HTML = HTML_Generator()
+    HTML.genereer_html(str(huis))
 
 if __name__ == "__main__":
     main()

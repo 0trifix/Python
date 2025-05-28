@@ -155,14 +155,32 @@ class SmartHub:
                     print(f"{apparaat.naam} is gesloten.")
 
 class Logger:
-    def __init__(self, naam) -> None:
-        self.naam = naam
-        self.logs = []
+    def __init__(self) -> None:
+        import datetime
+        self.log_file = f"logs/{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}_log.txt"
     def log(self, bericht):
-        self.logs.append(bericht)
+        import os
+        if not os.path.exists("logs"):
+            os.makedirs("logs")
+        with open(self.log_file, "a") as f:
+            import datetime
+            tijd = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            f.write(f"{tijd} - {bericht}\n")
 
-# class HTML_Generator:
-#     def __init__(self, naam) -> None:
-#         self.naam = naam
-#     def genereer_html(self, inhoud):
-#         with open(f"{self.naam}.html", "w") as f:
+class HTML_Generator:
+    def __init__(self) -> None:
+        import os
+        self.naam = "_sites/index.html"
+        if not os.path.exists("_sites"):
+            os.makedirs("_sites")
+    def genereer_html(self, inhoud):
+        import webbrowser, os
+        with open(f"{self.naam}", "w") as f:
+            f.write("<html>\n<head>\n<title>Smart Home Log</title>\n</head>\n<body>\n")
+            f.write("<h1>Smart Home Log</h1>\n")
+            f.write("<pre>\n")
+            f.write(inhoud)
+            f.write("</pre>\n")
+            f.write("</body>\n</html>")
+        webbrowser.open(f"file://{os.path.realpath(self.naam)}", new=2)
+
