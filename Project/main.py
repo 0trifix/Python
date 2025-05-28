@@ -38,16 +38,22 @@ def simuleer_beweging(bewoner, volgorde_kamers):
             # Bewegingssensor 'detecteert' beweging
             print(f"{kamer.sensor.naam} detecteert beweging in {kamer.naam}.")
             smarthub.beweging_gedetecteerd(kamer.sensor)
-                        # Toon lampstatus van ALLE lampen in deze kamer
             for apparaat in kamer.apparaten:
                 if apparaat.type == "lamp":
                     print(f"Lampstatus {apparaat.naam}: {'Aan' if apparaat.status else 'Uit'}\n")
                 if apparaat.type == "gordijn" and tijd == 6 or apparaat.type == "gordijn" and tijd == 21:
                     print(apparaat)
+        for kamer in kamers:
+            if len(kamer.bewoners) == 0:
+                print(f"Geen bewoners in {kamer.naam}. Lampen uitgeschakeld.")
+                for apparaat in kamer.apparaten:
+                    if apparaat.type == "lamp":
+                        apparaat.zet_helderheid(0)
+
 
 def main():
 # Bewoner aanmaken en startkamer toewijzen
-    bewoner = Bewoner("BOK")
+    bewoner = Bewoner("Jan")
     kamers[0].voeg_bewoner_toe(bewoner)
 
 # Simuleer een rondje door het Huis
