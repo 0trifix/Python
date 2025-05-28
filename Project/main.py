@@ -53,6 +53,11 @@ def simuleer_beweging(bewoner, kamers):
         if tijd == 21:
             smarthub.tijd_trigger()
             print(f"{bewoner.naam} gaat slapen.")
+        if tijd == 3:
+            for apparaat in kamers[0].apparaten:
+                if apparaat.type == "rookmelder":
+                    apparaat.detecteer_rook()
+                    apparaat.reset()
         for kamer in kamers:
             # Lichten uit zetten als er geen bewoners zijn of het tijd is om te slapen
             if len(kamer.bewoners) == 0:

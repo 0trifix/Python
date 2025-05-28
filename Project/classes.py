@@ -73,6 +73,14 @@ class Rookmelder(Apparaat):
         super().__init__(naam, merk)
         self.rook_detectie = False
         self.type = "rookmelder"
+        self.rook_detectie = False
+    def detecteer_rook(self):
+        self.rook_detectie = True
+        for i in range(3):
+            print(f"\033[91m{self.naam} detecteert rook! Alarm gaat af!\033[0m")
+    def reset(self):
+        self.rook_detectie = False
+        print(f"{self.naam} is gereset en rookdetectie is uitgeschakeld.")
 
 class Gordijn(Apparaat):
     def __init__(self, naam, merk) -> None:
