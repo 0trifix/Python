@@ -54,6 +54,8 @@ class Gordijn(Apparaat):
         super().__init__(naam, merk)
         self.open = False
         self.type = "gordijn"
+    def __str__(self) -> str:
+        return f"{super().__str__()} - {'Open' if self.open else 'Gesloten'}"
 
 class Kamer:
     def __init__(self, naam) -> None:
@@ -99,16 +101,22 @@ class SmartHub:
         self.regels = []
     def voeg_apparaat_toe(self, apparaat):
         self.apparaten.append(apparaat)
-    def voeg_regel_toe(self, regel):
-        self.regels.append(regel)
     def beweging_gedetecteerd(self, sensor):
-        self.voer_regels_uit(sensor)
-    def voer_regels_uit(self, sensor):
-        sensor_kamer = sensor.kamer
+        self.voer_opdracht_uit("lamp", sensor)
+    def tijd_trigger(self):
+        self.voer_opdracht_uit("gordijn")
+    def voer_opdracht_uit(self, apparaatType, sensor=None):
+        if sensor != None:
+            sensor_kamer = sensor.kamer
         for apparaat in self.apparaten:
-            if isinstance(apparaat, Lamp) and apparaat.kamer == sensor_kamer:
+            if apparaatType == "lamp" and apparaat.type == "lamp" and apparaat.kamer == sensor_kamer:
                 apparaat.zet_helderheid(100)
                 print(f"{apparaat.naam} is aangezet door {sensor.naam}.")
+            elif apparaatType == "gordijn" and apparaat.type == "gordijn":
+                if apparaat.open == False:
+                    apparaat.open = True
+                else:
+                    apparaat.open = False
 
 class Logger:
     def __init__(self, naam) -> None:
