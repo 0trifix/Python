@@ -28,8 +28,9 @@ def simuleer_beweging(bewoner, kamers):
     index = 0
     for tijd in range(24):
         print(f"\n {tijd}:00")
-        if tijd == 6 or tijd == 21:
+        if tijd == 6:
             smarthub.tijd_trigger()
+            print(f"{bewoner.naam} is wakker geworden.")
         if tijd >= 6 and tijd <= 21:
             if tijd % interval == 0 and index < len(kamers):
                 print(f"{bewoner.naam} beweegt naar {kamers[index].naam}.")
@@ -37,8 +38,16 @@ def simuleer_beweging(bewoner, kamers):
                 if kamers[index].lamp:
                     kamers[index].lamp.zet_helderheid(100)
                 index += 1                                   
+        if tijd == 21:
+            smarthub.tijd_trigger()
+            print(f"{bewoner.naam} gaat slapen.")
         for kamer in kamers:
+            # Lichten uit zetten als er geen bewoners zijn of het tijd is om te slapen
             if len(kamer.bewoners) == 0:
+                for apparaat in kamer.apparaten:
+                    if apparaat.type == "lamp":
+                        apparaat.zet_helderheid(0)
+            if tijd == 21:
                 for apparaat in kamer.apparaten:
                     if apparaat.type == "lamp":
                         apparaat.zet_helderheid(0)

@@ -3,7 +3,7 @@ class Apparaat:
         self.naam = naam
         self.merk = merk
         self.type = type
-        self.status = False
+        self.status = True
         self.kamer = None
     def __str__(self) -> str:
         return f"{self.naam} ({self.merk}) - {self.type} - {'Aan' if self.status else 'Uit'}"
@@ -125,11 +125,13 @@ class SmartHub:
             if apparaatType == "lamp" and apparaat.type == "lamp" and apparaat.kamer == sensor_kamer:
                 apparaat.zet_helderheid(100)
                 print(f"{apparaat.naam} is aangezet door {sensor.naam}.")
-            elif apparaatType == "gordijn" and apparaat.type == "gordijn":
+            if apparaatType == "gordijn" and apparaat.type == "gordijn":
                 if apparaat.open == False:
                     apparaat.open = True
+                    print(f"{apparaat.naam} is geopend.")
                 else:
                     apparaat.open = False
+                    print(f"{apparaat.naam} is gesloten.")
 
 class Logger:
     def __init__(self, naam) -> None:
