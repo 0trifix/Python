@@ -23,10 +23,14 @@ for kamer in kamers:
     for apparaat in [lamp, thermostaat, deurslot, rookmelder, gordijn, sensor]:
         kamer.voeg_apparaat_toe(apparaat)
         smarthub.voeg_apparaat_toe(apparaat)
+    kamer.sensor = sensor
+    kamer.lamp = lamp
 
 # Simulatiefunctie: bewoner loopt door kamers, triggert sensoren
 def simuleer_beweging(bewoner, volgorde_kamers):
     for tijd in range(24):  # Simuleer 24 uur
+        if tijd == 6 or tijd == 21:
+            smarthub.tijd_trigger()
         for kamer in volgorde_kamers:
             print(f"\nTijd: {tijd}:00")
             print(f"\n{bewoner.naam} loopt naar {kamer.naam}.")
@@ -34,13 +38,11 @@ def simuleer_beweging(bewoner, volgorde_kamers):
             # Bewegingssensor 'detecteert' beweging
             print(f"{kamer.sensor.naam} detecteert beweging in {kamer.naam}.")
             smarthub.beweging_gedetecteerd(kamer.sensor)
-            if tijd == 6 or tijd == 21:
-                smarthub.tijd_trigger()
-            # Toon lampstatus van ALLE lampen in deze kamer
+                        # Toon lampstatus van ALLE lampen in deze kamer
             for apparaat in kamer.apparaten:
                 if apparaat.type == "lamp":
                     print(f"Lampstatus {apparaat.naam}: {'Aan' if apparaat.status else 'Uit'}\n")
-                if apparaat.type == "gordijn" and tijd == 6:
+                if apparaat.type == "gordijn" and tijd == 6 or apparaat.type == "gordijn" and tijd == 21:
                     print(apparaat)
 
 def main():
