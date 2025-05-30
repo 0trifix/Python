@@ -1,4 +1,4 @@
-from apparaat import Apparaat
+from .apparaat import Apparaat
 
 class Rookmelder(Apparaat):
     def __init__(self, naam, merk, logger=None) -> None:

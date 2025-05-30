@@ -96,10 +96,10 @@ def main():
         html_generator.genereer_html(
             str(huis) + "\n\nLOGS:\n" + logger.get_logs()
         )
-        if tijd < 6 or tijd > 21:
-            time.sleep(1)
-        else:
-            time.sleep(3)
+        # if tijd < 6 or tijd > 21:
+        #     time.sleep(1)
+        # else:
+        #     time.sleep(3)
 
 if __name__ == "__main__":
     main()

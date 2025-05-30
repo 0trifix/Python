@@ -1,4 +1,4 @@
-from apparaat import Apparaat
+from .apparaat import Apparaat
 
 class Thermostaat(Apparaat):
     def __init__(self, naam, merk, temperatuur, logger=None) -> None:

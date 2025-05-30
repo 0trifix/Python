@@ -1,0 +1,258 @@
+2025-05-30 17:53:12 - Deurslot Gang: Pincode ingesteld: 2957
+2025-05-30 17:53:12 - Jan is toegevoegd aan Slaapkamer Jan.
+2025-05-30 17:53:12 - Sophie is toegevoegd aan Slaapkamer Sophie.
+2025-05-30 17:53:12 - 
+------ 0:00 ------
+2025-05-30 17:53:12 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Badkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - 
+------ 1:00 ------
+2025-05-30 17:53:12 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Badkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - 
+------ 2:00 ------
+2025-05-30 17:53:12 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Badkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - 
+------ 3:00 ------
+2025-05-30 17:53:12 - Rookmelder Keuken: detecteert rook! Alarm gaat af!
+2025-05-30 17:53:12 - Rookmelder Keuken: detecteert rook! Alarm gaat af!
+2025-05-30 17:53:12 - Rookmelder Keuken: detecteert rook! Alarm gaat af!
+2025-05-30 17:53:12 - Rookmelder Keuken: is gereset en rookdetectie is uitgeschakeld.
+2025-05-30 17:53:12 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Badkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - 
+------ 4:00 ------
+2025-05-30 17:53:12 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Badkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - 
+------ 5:00 ------
+2025-05-30 17:53:12 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Badkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:12 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 6:00 ------
+2025-05-30 17:53:13 - Gordijn Keuken is geopend door tijd-trigger.
+2025-05-30 17:53:13 - Gordijn Woonkamer is geopend door tijd-trigger.
+2025-05-30 17:53:13 - Gordijn Slaapkamer Jan is geopend door tijd-trigger.
+2025-05-30 17:53:13 - Gordijn Slaapkamer Sophie is geopend door tijd-trigger.
+2025-05-30 17:53:13 - Gordijn Badkamer is geopend door tijd-trigger.
+2025-05-30 17:53:13 - Gordijn Gang is geopend door tijd-trigger.
+2025-05-30 17:53:13 - Gordijn Bureau is geopend door tijd-trigger.
+2025-05-30 17:53:13 - SmartHub: tijd-trigger uitgevoerd, gordijnen geactiveerd.
+2025-05-30 17:53:13 - Jan wordt wakker.
+2025-05-30 17:53:13 - Sophie wordt wakker.
+2025-05-30 17:53:13 - Jan beweegt naar Keuken
+2025-05-30 17:53:13 - Jan verlaat Slaapkamer Jan.
+2025-05-30 17:53:13 - Jan is nu in Keuken.
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 100. Status: Aan
+2025-05-30 17:53:13 - SmartHub: beweging gedetecteerd door Bewegingssensor Keuken in Keuken.
+2025-05-30 17:53:13 - Sophie beweegt naar Keuken
+2025-05-30 17:53:13 - Sophie verlaat Slaapkamer Sophie.
+2025-05-30 17:53:13 - Sophie is nu in Keuken.
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 100. Status: Aan
+2025-05-30 17:53:13 - SmartHub: beweging gedetecteerd door Bewegingssensor Keuken in Keuken.
+2025-05-30 17:53:13 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Jan: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Badkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 7:00 ------
+2025-05-30 17:53:13 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Jan: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Badkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 8:00 ------
+2025-05-30 17:53:13 - Jan beweegt naar Woonkamer
+2025-05-30 17:53:13 - Jan verlaat Keuken.
+2025-05-30 17:53:13 - Jan is nu in Woonkamer.
+2025-05-30 17:53:13 - Lamp Woonkamer: Helderheid ingesteld op 100. Status: Aan
+2025-05-30 17:53:13 - SmartHub: beweging gedetecteerd door Bewegingssensor Woonkamer in Woonkamer.
+2025-05-30 17:53:13 - Sophie beweegt naar Woonkamer
+2025-05-30 17:53:13 - Sophie verlaat Keuken.
+2025-05-30 17:53:13 - Sophie is nu in Woonkamer.
+2025-05-30 17:53:13 - Lamp Woonkamer: Helderheid ingesteld op 100. Status: Aan
+2025-05-30 17:53:13 - SmartHub: beweging gedetecteerd door Bewegingssensor Woonkamer in Woonkamer.
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Jan: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Badkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 9:00 ------
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Jan: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Badkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 10:00 ------
+2025-05-30 17:53:13 - Deurslot Gang: Foute pincode. Poging 1/3.
+2025-05-30 17:53:13 - Jan heeft een foute poging gedaan voor deurslot in Gang
+2025-05-30 17:53:13 - Deurslot Gang: Foute pincode. Poging 2/3.
+2025-05-30 17:53:13 - Jan heeft een foute poging gedaan voor deurslot in Gang
+2025-05-30 17:53:13 - Deurslot Gang: Deur geopend met juiste pincode.
+2025-05-30 17:53:13 - Jan heeft het deurslot geopend in Gang
+2025-05-30 17:53:13 - Sophie beweegt naar Slaapkamer Sophie
+2025-05-30 17:53:13 - Sophie verlaat Woonkamer.
+2025-05-30 17:53:13 - Sophie is nu in Slaapkamer Sophie.
+2025-05-30 17:53:13 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 100. Status: Aan
+2025-05-30 17:53:13 - SmartHub: beweging gedetecteerd door Bewegingssensor Slaapkamer Sophie in Slaapkamer Sophie.
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Jan: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Badkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 11:00 ------
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Jan: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Badkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 12:00 ------
+2025-05-30 17:53:13 - Jan beweegt naar Badkamer
+2025-05-30 17:53:13 - Jan verlaat Woonkamer.
+2025-05-30 17:53:13 - Jan is nu in Badkamer.
+2025-05-30 17:53:13 - Lamp Badkamer: Helderheid ingesteld op 100. Status: Aan
+2025-05-30 17:53:13 - SmartHub: beweging gedetecteerd door Bewegingssensor Badkamer in Badkamer.
+2025-05-30 17:53:13 - Deurslot Gang: Foute pincode. Poging 1/3.
+2025-05-30 17:53:13 - Sophie heeft een foute poging gedaan voor deurslot in Gang
+2025-05-30 17:53:13 - Deurslot Gang: Foute pincode. Poging 2/3.
+2025-05-30 17:53:13 - Sophie heeft een foute poging gedaan voor deurslot in Gang
+2025-05-30 17:53:13 - Deurslot Gang: Deur geopend met juiste pincode.
+2025-05-30 17:53:13 - Sophie heeft het deurslot geopend in Gang
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Jan: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 13:00 ------
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Jan: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 14:00 ------
+2025-05-30 17:53:13 - Jan beweegt naar Slaapkamer Jan
+2025-05-30 17:53:13 - Jan verlaat Badkamer.
+2025-05-30 17:53:13 - Jan is nu in Slaapkamer Jan.
+2025-05-30 17:53:13 - Lamp Slaapkamer Jan: Helderheid ingesteld op 100. Status: Aan
+2025-05-30 17:53:13 - SmartHub: beweging gedetecteerd door Bewegingssensor Slaapkamer Jan in Slaapkamer Jan.
+2025-05-30 17:53:13 - Sophie beweegt naar Badkamer
+2025-05-30 17:53:13 - Sophie verlaat Slaapkamer Sophie.
+2025-05-30 17:53:13 - Sophie is nu in Badkamer.
+2025-05-30 17:53:13 - Lamp Badkamer: Helderheid ingesteld op 100. Status: Aan
+2025-05-30 17:53:13 - SmartHub: beweging gedetecteerd door Bewegingssensor Badkamer in Badkamer.
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 15:00 ------
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 16:00 ------
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 17:00 ------
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 18:00 ------
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 19:00 ------
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 20:00 ------
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - 
+------ 21:00 ------
+2025-05-30 17:53:13 - Gordijn Keuken is gesloten door tijd-trigger.
+2025-05-30 17:53:13 - Gordijn Woonkamer is gesloten door tijd-trigger.
+2025-05-30 17:53:13 - Gordijn Slaapkamer Jan is gesloten door tijd-trigger.
+2025-05-30 17:53:13 - Gordijn Slaapkamer Sophie is gesloten door tijd-trigger.
+2025-05-30 17:53:13 - Gordijn Badkamer is gesloten door tijd-trigger.
+2025-05-30 17:53:13 - Gordijn Gang is gesloten door tijd-trigger.
+2025-05-30 17:53:13 - Gordijn Bureau is gesloten door tijd-trigger.
+2025-05-30 17:53:13 - SmartHub: tijd-trigger uitgevoerd, gordijnen geactiveerd.
+2025-05-30 17:53:13 - Jan gaat slapen.
+2025-05-30 17:53:13 - Sophie gaat slapen.
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Jan: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Badkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:13 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:14 - 
+------ 22:00 ------
+2025-05-30 17:53:14 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:14 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:14 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:14 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:14 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:14 - 
+------ 23:00 ------
+2025-05-30 17:53:14 - Lamp Keuken: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:14 - Lamp Woonkamer: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:14 - Lamp Slaapkamer Sophie: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:14 - Lamp Gang: Helderheid ingesteld op 0. Status: Uit
+2025-05-30 17:53:14 - Lamp Bureau: Helderheid ingesteld op 0. Status: Uit
